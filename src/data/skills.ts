@@ -1,0 +1,17 @@
+export const SKILLS = [
+  { name: 'HTML5', modalId: 'modal-html5' },
+  { name: 'CSS3', modalId: 'modal-css3' },
+  { name: 'JavaScript', modalId: 'modal-js' },
+  { name: 'TypeScript', modalId: 'modal-ts' },
+  { name: 'React', modalId: 'modal-react' },
+  { name: 'React-Router', modalId: 'modal-react-router' },
+  { name: 'React-Query', modalId: 'modal-react-query' },
+  { name: 'Zustand', modalId: 'modal-zustand' },
+  { name: 'TailwindCss', modalId: 'modal-tailwindcss' },
+  { name: 'Sass', modalId: 'modal-sass' },
+  { name: 'PocketBase', modalId: 'modal-pocketbase' },
+  { name: 'ExpressJS', modalId: 'modal-expressjs' },
+  { name: 'MySql', modalId: 'modal-mysql' },
+  { name: 'Git', modalId: 'modal-git' },
+  { name: 'Figma', modalId: 'modal-figma' },
+];

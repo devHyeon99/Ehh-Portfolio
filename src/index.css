@@ -1,0 +1,9 @@
+@import "https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0.3/css/all.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Apple SD Gothic Neo';
+}
