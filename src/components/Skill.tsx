@@ -4,8 +4,9 @@ import useModal from '../hooks/useModal';
 interface SkillProps {
   name: string;
   modalId: string;
+  content: string;
 }
-const Skill = ({ name, modalId }: SkillProps) => {
+const Skill = ({ name, modalId, content }: SkillProps) => {
   const { openModal } = useModal(modalId);
 
   return (
@@ -19,7 +20,7 @@ const Skill = ({ name, modalId }: SkillProps) => {
       </button>
       <Modal modalId={modalId}>
         <h2 className='mb-4 text-xl'>{name}</h2>
-        <p>This is the first modal {name}</p>
+        <p className='w-[500px] whitespace-pre-line'>{content}</p>
       </Modal>
     </>
   );

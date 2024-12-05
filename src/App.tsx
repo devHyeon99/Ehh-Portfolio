@@ -73,6 +73,7 @@ const App = () => {
                   key={skill.modalId}
                   name={skill.name}
                   modalId={skill.modalId}
+                  content={skill.content}
                 />
               ))}
             </div>

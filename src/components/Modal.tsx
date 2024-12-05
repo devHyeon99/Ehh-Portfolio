@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 import useModal from '../hooks/useModal';
+import { IoClose } from 'react-icons/io5';
 
 interface ModalProps {
   modalId: string;
@@ -20,7 +21,7 @@ const Modal: React.FC<ModalProps> = ({ modalId, children }) => {
       ></div>
       <div className='relative z-10 p-6 bg-white rounded-lg'>
         <button className='absolute top-2 right-2' onClick={closeModal}>
-          X
+          <IoClose size={24} />
         </button>
         {children}
       </div>
