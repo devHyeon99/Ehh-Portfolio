@@ -2,26 +2,98 @@ export const SKILLS = [
   {
     name: 'HTML5',
     modalId: 'modal-html5',
-    content: `1. 시맨틱 태그의 중요성을 알고 있습니다. HTML5는 시맨틱 태그를 도입하여 문서의 구조와 의미를 명확히 표현할 수 있게 합니다. 
-    <header>, <nav>, <article>, <section>, <footer> 등의 시맨틱 태그를 사용하면 검색 엔진 최적화(SEO)에 유리하고, 
-    코드의 가독성이 향상되며, 스크린 리더와 같은 보조 기술이 콘텐츠를 더 잘 이해할 수 있습니다.
-    2. HTML5는 다양한 새로운 폼 요소와 속성을 도입하여 사용자 입력을 보다 효과적으로 처리할 수 있게 합니다. 
-    <input type="email">, <input type="url">, <input type="date"> 등의 새로운 입력 타입과 required, pattern, placeholder 속성을 통해 입력 검증을 더 쉽게 수행할 수 있습니다.
-    3. HTML5는 웹 접근성을 개선하기 위해 많은 기능을 포함하고 있습니다. ARIA(Accessible Rich Internet Applications) 속성을 활용하여 스크린 리더 사용자가 웹 콘텐츠를 더 잘 이해할 수 있도록 돕고, 
-    시맨틱 태그를 사용하여 콘텐츠 구조를 명확히 함으로써 모든 사용자에게 더 나은 웹 경험을 제공합니다.`,
+    content: `시맨틱 태그를 도입하여 문서의 구조와 의미를 명확히 표현할 수 있게 합니다. 시맨틱 태그를 사용하면 검색 엔진 최적화(SEO)에 유리하고, 코드의 가독성이 향상되며, 스크린 리더와 같은 보조 기술이 콘텐츠를 더 잘 이해할 수 있어 이를 프로젝트에 적용한 경험이 있습니다.
+    
+    ARIA(Accessible Rich Internet Applications) 속성을 활용하여 스크린 리더 사용자가 웹 콘텐츠를 더 잘 이해할 수 있도록 돕고, 시맨틱 태그를 사용하여 콘텐츠 구조를 명확히 함으로써 모든 사용자에게 더 나은 웹 경험을 제공할 수 있도록 하는 것이 중요하며 이를 프로젝트에 적용한 경험이 있습니다.`,
   },
-  { name: 'CSS3', modalId: 'modal-css3' },
-  { name: 'JavaScript', modalId: 'modal-js' },
-  { name: 'TypeScript', modalId: 'modal-ts' },
-  { name: 'React', modalId: 'modal-react' },
-  { name: 'React-Router', modalId: 'modal-react-router' },
-  { name: 'React-Query', modalId: 'modal-react-query' },
-  { name: 'Zustand', modalId: 'modal-zustand' },
-  { name: 'TailwindCss', modalId: 'modal-tailwindcss' },
-  { name: 'Sass', modalId: 'modal-sass' },
-  { name: 'PocketBase', modalId: 'modal-pocketbase' },
-  { name: 'ExpressJS', modalId: 'modal-expressjs' },
-  { name: 'MySql', modalId: 'modal-mysql' },
-  { name: 'Git', modalId: 'modal-git' },
-  { name: 'Figma', modalId: 'modal-figma' },
+  {
+    name: 'CSS3',
+    modalId: 'modal-css3',
+    content: `미디어 쿼리를 사용하여 다양한 디바이스와 화면 크기에 맞춰 레이아웃을 조정하고, 유연한 그리드 레이아웃을 통해 모든 사용자에게 최적화된 경험을 프로젝트에 적용한 경험이 있습니다.
+    
+    CSS-in-JS를 사용하여 컴포넌트 기반 스타일링을 구현할 수 있습니다. 이를 통해 스타일을 컴포넌트와 함께 관리할 수 있어 유지보수성과 재사용성을 높입니다. 예를 들어, styled-components, emotion 등을 공부하고 실습해본 경험이 있습니다.
+    
+    CSS Modules를 활용하여 CSS 클래스의 범위를 제한하고, 전역 네임스페이스 오염을 방지할 수 있습니다. 이를 통해 스타일 충돌을 피하고, 모듈화된 CSS를 관리할 수 있습니다. 이를 공부하고 실습해본 경험이 있습니다.`,
+  },
+  {
+    name: 'JavaScript',
+    modalId: 'modal-js',
+    content: `JavaScript의 비동기 처리, 이벤트 루프, 클로저, 프로토타입 상속 등의 핵심 개념을 잘 이해하고 있습니다. 이러한 개념을 활용하여 복잡한 웹 애플리케이션을 효율적으로 개발할 수 있습니다.
+    
+    ES6 모듈 시스템을 사용하여 코드를 모듈화하고 재사용성을 높입니다. import/export 구문을 활용하여 코드의 유지보수성을 향상시키고, 프로젝트의 구조를 체계적으로 관리한 경험이 있습니다.
+    
+    웹 컴포넌트(Web Components)를 활용하여 재사용 가능한 커스텀 HTML 요소를 만들고, 캡슐화된 컴포넌트를 개발할 수 있습니다. Shadow DOM, Custom Elements, HTML Templates 등을 실제 프로젝트에 적용한 경험이 있습니다.`,
+  },
+  {
+    name: 'TypeScript',
+    modalId: 'modal-ts',
+    content: `TypeScript의 정적 타입 시스템을 통해 코드의 안정성과 가독성을 높일 수 있습니다. 기본적인 타입 선언, 인터페이스, 타입 추론 등의 개념을 이해하고 있습니다.`,
+  },
+  {
+    name: 'React',
+    modalId: 'modal-react',
+    content: `React의 컴포넌트 기반 아키텍처를 배우면서, UI를 독립적인 컴포넌트 단위로 나누어 관리하는 방법을 익혔습니다. 이로 인해 복잡한 사용자 인터페이스를 효율적으로 구축할 수 있게 되었고, 재사용 가능한 컴포넌트를 설계하여 유지보수성을 높이는 데 도움이 되었습니다. 이러한 개념을 실제 프로젝트에 적용하면서, 컴포넌트 간 의존성을 최소화하고, 확장 가능한 아키텍처를 구현할 수 있었습니다.
+  
+      React에서 상태 관리의 중요성을 깨닫고, 컴포넌트 내에서 상태(state)를 효율적으로 관리하는 방법을 학습했습니다. 이를 통해 UI의 변화를 즉시 반영하고, 사용자와의 상호작용에 따라 동적으로 변하는 화면을 구현할 수 있었습니다. 상태 변화에 따른 리렌더링을 적절히 활용하여 성능을 최적화하고, 복잡한 애플리케이션에서 상태 흐름을 명확히 관리할 수 있었습니다.
+  
+      React의 생명주기 메서드와 훅(Hooks)의 개념을 익히고, 이를 통해 함수형 컴포넌트에서도 상태 관리와 부수 효과를 처리할 수 있는 방법을 배웠습니다. useState와 useEffect를 사용하여, 컴포넌트가 렌더링될 때마다 필요한 작업을 자동으로 처리하고, 코드의 가독성을 높이면서 재사용성을 강화하는 방식으로 프로젝트에 적용했습니다. 이를 통해 리액트의 효율적인 상태 관리 및 동작 제어를 구현할 수 있었습니다.
+    `,
+  },
+  {
+    name: 'React-Router',
+    modalId: 'modal-react-router',
+    content: `React Router를 사용하여 SPA의 라우팅을 효율적으로 관리했습니다. 동적 라우트 매칭과 리다이렉트를 활용하여 페이지 간 이동을 원활하게 구현했으며, Link 컴포넌트를 사용해 페이지 간 네비게이션을 처리했습니다.
+  
+      중첩된 라우트를 적용해 레이아웃을 구조화하고, 부모 컴포넌트 내에서 자식 라우트를 효율적으로 렌더링했습니다. 이를 통해 복잡한 UI도 관리하기 쉬운 구조로 개선했습니다.
+  
+      Lazy 로딩을 통해 페이지를 필요할 때만 로드하게 해 성능을 최적화했으며, 페이지 이동 시 빠른 반응성을 제공할 수 있었습니다.
+    `,
+  },
+  {
+    name: 'React-Query',
+    modalId: 'modal-react-query',
+    content: `서버 데이터를 매번 새로 불러오는 것은 비효율적이라고 생각하여, React Query를 사용해 캐싱을 활용하여 리팩토링을 시도한 경험이 있습니다. 이를 통해 데이터 페칭 빈도를 줄이고 성능을 최적화할 수 있었습니다.`,
+  },
+  {
+    name: 'Zustand',
+    modalId: 'modal-zustand',
+    content: `
+      Zustand를 활용하여 전역 상태 관리를 단순하고 직관적으로 구현했습니다. 복잡한 상태 관리 로직을 간소화하고, 성능 최적화를 통해 효율적인 애플리케이션을 만들 수 있었습니다. 이를 통해 상태 관리의 복잡성을 줄이고, 프로젝트에서 실제로 적용하여 효과를 보았습니다.
+    `,
+  },
+  {
+    name: 'TailwindCss',
+    modalId: 'modal-tailwindcss',
+    content: `Tailwind CSS를 사용하여 유틸리티 퍼스트 접근 방식으로 빠르고 일관성 있는 스타일링을 구현할 수 있습니다. 이를 통해 생산성을 높이고, 커스텀 디자인 시스템을 구축한 경험이 있습니다.`,
+  },
+  {
+    name: 'Sass',
+    modalId: 'modal-sass',
+    content: `Sass를 사용하여 CSS를 모듈화하고, 변수, 믹스인, 중첩 등을 통해 유지보수성과 재사용성을 높일 수 있습니다. 이를 통해 프로젝트를 진행한 경험이 있습니다.`,
+  },
+  {
+    name: 'PocketBase',
+    modalId: 'modal-pocketbase',
+    content: `PocketBase를 활용하여 프로젝트를 진행한적이 있습니다. 데이터베이스 관리, 인증, 실시간 데이터 등을 간편하게 처리할 수 있는 기능을 잘 이해하고 있습니다.`,
+  },
+  {
+    name: 'ExpressJS',
+    modalId: 'modal-expressjs',
+    content: `ExpressJS를 사용하여 서버 사이드 로직을 구현한적이 있습니다. RESTful API 구축, 미들웨어 설정, 라우팅 관리 등의 경험이 있습니다.`,
+  },
+  {
+    name: 'MySql',
+    modalId: 'modal-mysql',
+    content: `MySQL 데이터베이스의 설계, 쿼리 작성 등의 경험이 있습니다. 관계형 데이터베이스 모델링, 인덱스 사용 등을 이해하고 있습니다.`,
+  },
+  {
+    name: 'Git',
+    modalId: 'modal-git',
+    content: `Git을 사용하여 버전 관리를 효율적으로 수행할 수 있습니다. 다양한 프로젝트에서 활용한 경험이 있습니다.`,
+  },
+  {
+    name: 'Figma',
+    modalId: 'modal-figma',
+    content: `Figma를 사용하여 UI/UX 디자인을 효율적으로 수행할 수 있습니다. 프로토타이핑, 디자인 시스템 구축, 협업 기능 등을 활용하여 사용자 중심의 디자인을 만든 경험이 있습니다.`,
+  },
 ];

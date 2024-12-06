@@ -19,8 +19,10 @@ const Skill = ({ name, modalId, content }: SkillProps) => {
         {name}
       </button>
       <Modal modalId={modalId}>
-        <h2 className='mb-4 text-xl'>{name}</h2>
-        <p className='w-[500px] whitespace-pre-line'>{content}</p>
+        <h2 className='mb-4 text-2xl font-semibold'>{name}</h2>
+        <p className='w-[800px] whitespace-pre-line font-light text-lg'>
+          {content}
+        </p>
       </Modal>
     </>
   );
