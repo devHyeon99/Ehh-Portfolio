@@ -20,7 +20,7 @@ const Skill = ({ name, modalId, content }: SkillProps) => {
       </button>
       <Modal modalId={modalId}>
         <h2 className='mb-4 text-2xl font-semibold'>{name}</h2>
-        <p className='w-[800px] whitespace-pre-line font-light text-lg'>
+        <p className='text-lg font-light leading-8 whitespace-pre-line'>
           {content}
         </p>
       </Modal>

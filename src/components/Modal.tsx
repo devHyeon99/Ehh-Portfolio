@@ -39,12 +39,12 @@ const Modal = ({ modalId, children }: ModalProps) => {
   if (!isOpen) return null;
 
   return ReactDOM.createPortal(
-    <div className='fixed inset-0 z-50 flex items-center justify-center'>
+    <div className='fixed inset-0 z-50 flex items-center justify-center backdrop-blur-[2px]'>
       <div
-        className='fixed inset-0 bg-black opacity-50'
+        className='fixed inset-0 bg-black opacity-30'
         onClick={closeModal}
       ></div>
-      <div className='relative z-10 p-6 bg-white rounded-lg'>
+      <div className='relative z-10 w-[90%] p-6 bg-white rounded-lg xl:w-[60%]'>
         <button className='absolute top-2 right-2' onClick={closeModal}>
           <IoClose size={24} />
         </button>
