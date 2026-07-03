@@ -2,9 +2,20 @@ import { useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { HiChevronDown, HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
 import useSlideNav from '../hooks/useSlideNav';
+import usePreloadImages from '../hooks/usePreloadImages';
 import IntroSlide from './IntroSlide';
 import ProjectGroup from './ProjectGroup';
 import { PROJECTS } from '../data';
+
+// 데크에서 사용하는 모든 이미지 경로. 마운트 시 미리 받아둬 슬라이드 이동을 매끄럽게 한다.
+const PRELOAD_IMAGES = [
+  '/images/ehh.jpg',
+  ...PROJECTS.flatMap((project) =>
+    project.cases
+      .filter((c) => c.hasImage && c.image)
+      .map((c) => c.image as string)
+  ),
+];
 
 const slideVariants = {
   enter: (direction: number) => ({
@@ -22,6 +33,7 @@ const SLIDE_COUNT = PROJECTS.length + 1;
 
 const Deck = () => {
   const { index, direction, goTo, step } = useSlideNav(SLIDE_COUNT);
+  usePreloadImages(PRELOAD_IMAGES);
   const [caseState, setCaseState] = useState({
     active: 0,
     total: 1,
