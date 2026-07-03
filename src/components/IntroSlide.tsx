@@ -10,7 +10,7 @@ const IntroSlide = () => {
         className='w-24 h-24 mb-8 overflow-hidden border rounded-full border-border lg:w-28 lg:h-28'
       >
         <img
-          src='/src/assets/ehh.jpg'
+          src='/images/ehh.jpg'
           alt='프로필'
           className='object-cover w-full h-full'
         />
