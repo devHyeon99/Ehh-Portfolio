@@ -1,4 +1,4 @@
-export { default as Skill } from './Skill.tsx';
-export { default as ProjectCard } from './ProjectCard.tsx';
-export { default as Modal } from './Modal.tsx';
-export { default as ProjectModal } from './ProjectModal.tsx';
+export { default as Deck } from './Deck.tsx';
+export { default as IntroSlide } from './IntroSlide.tsx';
+export { default as ProjectGroup } from './ProjectGroup.tsx';
+export { default as ProjectSlide } from './ProjectSlide.tsx';

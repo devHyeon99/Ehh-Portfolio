@@ -3,12 +3,17 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      boxShadow: {
-        custom: '0 0.1rem 0.5rem rgba(0, 0, 0, 0.175)',
-      },
       colors: {
-        black: '#1F1F1F',
-        'gray-custom': '#303030',
+        background: '#FFFFFF',
+        foreground: '#18181B',
+        muted: '#F4F4F5',
+        'muted-foreground': '#71717A',
+        accent: '#4F46E5',
+        'accent-foreground': '#EEF2FF',
+        border: '#E4E4E7',
+      },
+      fontFamily: {
+        mono: ['"JetBrains Mono"', 'monospace'],
       },
     },
   },

@@ -1,9 +1,19 @@
 @import "https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0.3/css/all.min.css";
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
 body {
   font-family: 'Apple SD Gothic Neo';
+  background-color: #ffffff;
+  color: #18181b;
 }
