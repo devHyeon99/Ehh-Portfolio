@@ -40,8 +40,7 @@ const IntroSlide = () => {
         transition={{ duration: 0.6, delay: 0.3 }}
         className='max-w-xl mt-6 text-base leading-8 text-muted-foreground lg:text-lg'
       >
-        {/* TODO(Phase 2): 실제 한 줄 소개 문구로 교체 */}
-        사용자 경험을 고민하며 꾸준히 배우고 성장하는 개발자입니다.
+        사용자 경험을 중요시하며 문제 해결을 좋아하는 개발자입니다.
       </motion.p>
 
       <motion.a
