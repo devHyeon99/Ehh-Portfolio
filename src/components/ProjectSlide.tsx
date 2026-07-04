@@ -45,7 +45,7 @@ const ProjectSlide = ({
 
   return (
     <div className='flex flex-col w-full min-h-screen'>
-      <div className='w-full px-20 py-16 mx-auto my-auto max-w-7xl'>
+      <div className='w-full p-6 mx-auto my-auto md:px-20 md:py-16 max-w-7xl'>
         {showHeader ? (
           <div className='mb-10'>
             <p className='mb-2 font-mono text-xs tracking-widest uppercase text-accent'>
@@ -157,7 +157,7 @@ const ProjectSlide = ({
                 className='max-w-[90vw] max-h-[90vh] object-contain cursor-zoom-out rounded-xl'
               />
             </div>,
-            document.body
+            document.body,
           )}
 
         {/* 설명 */}
