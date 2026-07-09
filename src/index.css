@@ -17,3 +17,69 @@ body {
   background-color: #ffffff;
   color: #18181b;
 }
+
+/* ===== 인쇄(PDF 저장) 전용 스타일 =====
+   화면에서는 인터랙티브 데크만, 인쇄 시에는 PrintView만 보이도록 전환한다.
+   데크는 슬라이드를 하나씩만 렌더링하므로 인쇄용 전체 뷰를 따로 둔다. */
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+
+  /* 화면 전용 오버플로 잠금 해제 (스크롤 없이 전체 흐름 출력) */
+  html,
+  body,
+  #root {
+    height: auto;
+    overflow: visible;
+  }
+
+  /* 화면용 데크 숨김, 인쇄용 뷰 표시 */
+  .screen-root {
+    display: none !important;
+  }
+
+  .print-root {
+    display: block !important;
+  }
+
+  /* 배경색/강조색을 인쇄에도 그대로 반영 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 표지는 한 페이지를 차지 */
+  .print-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 100vh;
+    break-after: page;
+  }
+
+  /* 각 프로젝트는 새 페이지에서 시작 */
+  .print-project {
+    break-before: page;
+  }
+
+  /* 케이스/이미지가 페이지 경계에서 잘리지 않도록 */
+  .print-case {
+    break-inside: avoid;
+    margin-bottom: 28px;
+  }
+
+  .print-case-img {
+    max-height: 90mm;
+    break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
+}
