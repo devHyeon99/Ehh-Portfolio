@@ -1,85 +1,158 @@
-@import "https://cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0.3/css/all.min.css";
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-html,
-body,
-#root {
-  height: 100%;
-  overflow: hidden;
+@layer base {
+  /* 밝은 화면 기준값. 인쇄는 항상 이 값을 쓴다. */
+  :root {
+    color-scheme: light;
+    --paper: 250 251 252;
+    --ink: 32 35 43;
+    --muted: 103 112 128;
+    --line: 223 227 233;
+    --edge: 185 194 210;
+    --faint: 142 150 164;
+    --surface: 255 255 255;
+    --surface-sunken: 242 244 247;
+    --surface-hover: 236 239 245;
+    --brand: 36 77 226;
+    --brand-dark: 23 59 182;
+    --brand-tint: 239 243 255;
+    --brand-edge: 189 202 245;
+    --brand-strong: 35 65 166;
+    --brand-copy: 54 70 101;
+    --on-brand: 255 255 255;
+    --copy: 76 86 102;
+    --copy-soft: 83 93 108;
+    --copy-strong: 65 75 91;
+  }
+
+  /* 어두운 화면. @media screen 안에 두어 인쇄물에는 적용되지 않는다. */
+  @media screen {
+    :root.dark {
+      color-scheme: dark;
+      --paper: 15 18 24;
+      --ink: 232 235 242;
+      --muted: 152 161 178;
+      --line: 39 45 58;
+      --edge: 57 66 79;
+      --faint: 123 133 152;
+      --surface: 23 28 38;
+      --surface-sunken: 18 22 30;
+      --surface-hover: 29 36 49;
+      --brand: 139 167 255;
+      --brand-dark: 163 186 255;
+      --brand-tint: 24 33 53;
+      --brand-edge: 51 69 110;
+      --brand-strong: 169 192 255;
+      --brand-copy: 197 209 234;
+      --on-brand: 11 18 32;
+      --copy: 194 201 214;
+      --copy-soft: 185 193 207;
+      --copy-strong: 215 221 232;
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  body {
+    background: rgb(var(--paper));
+    color: rgb(var(--ink));
+    font-family:
+      "Noto Sans KR",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    color: inherit;
+    cursor: pointer;
+    font: inherit;
+  }
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+  a,
+  button,
+  summary {
+    touch-action: manipulation;
+  }
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible,
+  pre:focus-visible {
+    outline: 3px solid rgb(var(--brand));
+    outline-offset: 5px;
+  }
+  svg {
+    flex-shrink: 0;
+  }
+  p {
+    line-height: 1.85;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  ul {
+    padding-left: 1.15em;
+  }
+  li {
+    margin: 0.7em 0;
+    padding-left: 0.25em;
+    line-height: 1.85;
+    word-break: keep-all;
+  }
 }
 
-body {
-  font-family: 'Apple SD Gothic Neo';
-  background-color: #ffffff;
-  color: #18181b;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
-/* ===== 인쇄(PDF 저장) 전용 스타일 =====
-   화면에서는 인터랙티브 데크만, 인쇄 시에는 PrintView만 보이도록 전환한다.
-   데크는 슬라이드를 하나씩만 렌더링하므로 인쇄용 전체 뷰를 따로 둔다. */
 @media print {
   @page {
     size: A4;
-    margin: 14mm;
+    margin: 16mm;
   }
-
-  /* 화면 전용 오버플로 잠금 해제 (스크롤 없이 전체 흐름 출력) */
   html,
   body,
   #root {
     height: auto;
     overflow: visible;
+    background: white;
+    color: #111;
   }
-
-  /* 화면용 데크 숨김, 인쇄용 뷰 표시 */
-  .screen-root {
-    display: none !important;
-  }
-
-  .print-root {
-    display: block !important;
-  }
-
-  /* 배경색/강조색을 인쇄에도 그대로 반영 */
-  * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
-
-  /* 표지는 한 페이지를 차지 */
-  .print-cover {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    min-height: 100vh;
-    break-after: page;
-  }
-
-  /* 각 프로젝트는 새 페이지에서 시작 */
-  .print-project {
-    break-before: page;
-  }
-
-  /* 케이스/이미지가 페이지 경계에서 잘리지 않도록 */
-  .print-case {
-    break-inside: avoid;
-    margin-bottom: 28px;
-  }
-
-  .print-case-img {
-    max-height: 90mm;
-    break-inside: avoid;
-  }
-
   h2,
   h3,
   h4 {
     break-after: avoid;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }

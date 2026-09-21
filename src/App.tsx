@@ -1,15 +1,34 @@
-import { Deck, PrintView } from './components';
+import { NotFoundPage } from "./components/pages/NotFoundPage";
+import { HomePage } from "./components/pages/HomePage";
+import { ProjectPage } from "./components/pages/ProjectPage";
+import { SiteFooter } from "./components/layout/SiteFooter";
+import { SiteHeader } from "./components/layout/SiteHeader";
+import { SkipLink } from "./components/layout/SkipLink";
+import { PrintView } from "./components/print/PrintView";
+import { useRoute } from "./hooks/useRoute";
 
-const App = () => {
+function App() {
+  const { project, notFound } = useRoute();
+
   return (
     <>
-      {/* 화면에서는 인터랙티브 데크, 인쇄(PDF 저장) 시에는 PrintView가 표시된다 */}
-      <div className='screen-root'>
-        <Deck />
+      <div className='print:hidden'>
+        <SkipLink />
+        <SiteHeader />
+        <main id='main-content' tabIndex={-1}>
+          {notFound ? (
+            <NotFoundPage />
+          ) : project ? (
+            <ProjectPage project={project} />
+          ) : (
+            <HomePage />
+          )}
+        </main>
+        <SiteFooter />
       </div>
       <PrintView />
     </>
   );
-};
+}
 
 export default App;

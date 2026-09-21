@@ -1,21 +1,44 @@
 <!doctype html>
 <html lang="ko">
-
-<head>
-  <meta charset="UTF-8" />
-  <title>엄현호 포트폴리오</title>
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module" src="/src/main.tsx"></script>
-</head>
-
-<body>
-  <noscript>해당 어플리케이션을 자바스크립트가 활성화 되어야합니다.</noscript>
-  <div id="root"></div>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="프론트엔드 개발자 엄현호의 포트폴리오. 메엠지지, 하루몽, 컬리 클론 프로젝트의 문제 해결 과정과 실제 구현 코드를 담았습니다."
+    />
+    <meta name="theme-color" content="#fafbfc" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <title>엄현호 - 프론트엔드 포트폴리오</title>
+    <!-- 첫 페인트 전에 화면 모드를 정한다. 늦으면 밝은 화면이 한 번 스쳐 지나간다.
+         키와 규칙은 src/hooks/useTheme.ts 와 같아야 한다. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark =
+            saved === "light" || saved === "dark"
+              ? saved === "dark"
+              : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.classList.toggle("dark", dark);
+          if (dark) {
+            document
+              .querySelector('meta[name="theme-color"]')
+              .setAttribute("content", "#0f1218");
+          }
+        } catch (e) {
+          // 저장소를 막아둔 환경이면 밝은 화면으로 시작한다.
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript
+      >프로젝트 상세를 보려면 JavaScript를 활성화해 주세요. 소스 코드는
+      github.com/devHyeon99에서 확인할 수 있습니다.</noscript
+    >
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
